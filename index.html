@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- 这是网页的"说明书",告诉浏览器"我是一个网页" -->
+
+<html lang="zh">
+<!-- <html> 是整个网页的外壳,lang="zh" 表示内容是中文 -->
+
+<head>
+    <!-- head 里放"幕后信息",用户在页面上看不到这些 -->
+
+    <meta charset="UTF-8">
+    <!-- charset="UTF-8" 让网页能正确显示中文,不会乱码 -->
+
+    <title>我的第一个网页</title>
+    <!-- 这是浏览器标签页上显示的标题 -->
+
+    <style>
+        /* style 里放"装修风格"——决定网页长什么样 */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* 渐变背景色:从蓝紫到紫红 */
+            font-family: "Microsoft YaHei", sans-serif;
+            /* 字体:微软雅黑 */
+            color: white;
+            text-align: center;
+            /* 文字居中 */
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            /* 半透明白色卡片 */
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 30px auto;
+            backdrop-filter: blur(10px);
+            /* 毛玻璃效果 */
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            /* 鼠标移上去变成小手 */
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+            /* 鼠标悬停时按钮放大一点 */
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 22px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- body 里放"用户能看到的全部内容" -->
+
+    <h1>👋 Hello World!</h1>
+    <p>欢迎来到我的第一个网页</p>
+
+    <div class="card">
+        <p>这是用 AI Agent 做的第一个项目 ✨</p>
+        <p>2026年6月22日,我开始了编程之旅。</p>
+
+        <button onclick="sayHi()">点我试试看!</button>
+        <!-- onclick="sayHi()" 表示:点击这个按钮时,执行 sayHi 这个动作 -->
+
+        <div id="message"></div>
+        <!-- 这里用来显示点击按钮后的文字 -->
+    </div>
+
+    <script>
+        /* script 里放"动作逻辑"——让网页能动起来 */
+        let count = 0;
+        function sayHi() {
+            count = count + 1;
+            // 每点一次,数字 +1
+            document.getElementById("message").innerText =
+                "🎉 你点了我 " + count + " 次!程序真的能跑!";
+            // 找到那个叫 message 的位置,把文字换掉
+        }
+    </script>
+</body>
+
+</html>
